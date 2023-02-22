@@ -38,6 +38,7 @@
             font-size: 16px;
             font-weight: bold;
             border: none;
+            text-shadow: 0 0 1px black;
         }
         .form-container .reg-button:hover{
             transition: 0.3s;
@@ -89,7 +90,8 @@
             <label for="section">Section</label><br>
             <input type="text" name="section" id="section" value="<?php if(isset($_GET['edit'])){echo $row->section;} ?>"><br><br>
 
-            <input type="submit" value="Register" class="reg-button">
+            <input type="submit" name="<?php if(isset($_GET['edit'])){echo 'Update';}else{echo 'submit';} ?>"
+            value="<?php if(isset($_GET['edit'])){echo 'Update';}else{echo 'Register';} ?>" class="reg-button">
         </form>
 
         <form method="post">
