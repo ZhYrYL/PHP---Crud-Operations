@@ -51,7 +51,7 @@
 </head>
 <body>
     <div class="flex-container">
-        <form method="post" class="form-container">
+        <form method="post" class="form-container" action="db/connection.php">
             <h1>Register Account</h1>
             <label for="s_id">Student ID</label><br>
             <input type="text" name="s_id" id="s_id"><br><br>
