@@ -43,6 +43,12 @@
             background-color: #38E54D;
             color: gold;
         }
+        .table-container,tr,td{
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid;
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,6 +78,39 @@
             <input type="text" name="section" id="section"><br><br>
 
             <input type="submit" value="Register" class="reg-button">
+        </form>
+
+        <form method="post">
+            <table class="table-container">
+                <tr>
+                    <td>Student ID</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Middle Name</td>
+                    <td>Age</td>
+                    <td>Section</td>
+                </tr>
+
+                <?php
+                    include 'db/connection.php';
+                    $select = mysqli_query($connection, "SELECT * FROM grades");
+                    while($result = mysqli_fetch_object($select)){
+                ?>
+                
+                <tr>
+                    <td><?=$result->student_id?></td>
+                    <td><?=$result->fname?></td>
+                    <td><?=$result->mname?></td>
+                    <td><?=$result->lname?></td>
+                    <td><?=$result->age?></td>
+                    <td><?=$result->section?></td>
+                </tr>    
+                    
+                    <?php } ?>
+                
+                
+            </table>
+
         </form>
     </div>
     

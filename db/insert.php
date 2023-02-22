@@ -12,7 +12,8 @@
     $insert = mysqli_query($connection, "INSERT INTO grades VALUES('$student_id', '$fname','$mname','$lname','$age','$section')");
 
     if($insert===TRUE){
-        echo "Registered Successfully";
+        header("location:../grades.php");
+        // echo "Registered Successfully";
     }else{
         echo "Error";
     }
