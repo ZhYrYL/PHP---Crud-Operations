@@ -120,7 +120,7 @@
                     <td><?=$result->age?></td>
                     <td><?=$result->section?></td>
                     <td><a href="grades.php?edit=<?=$result->student_id?>">EDIT</a>|
-                    <a href="#">DELETE</a></td>
+                    <a href="db/delete.php?delete=<?=$result->student_id?>">DELETE</a></td>
                 </tr>    
                     
                     <?php } ?>
